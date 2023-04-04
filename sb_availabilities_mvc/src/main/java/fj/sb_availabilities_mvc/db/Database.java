@@ -32,8 +32,7 @@ public class Database {
 		
 		Query q = session.createQuery("SELECT pl FROM Person pl");
 		personList = q.getResultList();
-		
-		
+				
 		transaction.commit();
 		session.close();
 		
@@ -45,12 +44,10 @@ public class Database {
 		
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		
-		
+				
 		Query q = session.createQuery("SELECT al FROM Address al");
 		addressList = q.getResultList();
-		
-		
+				
 		transaction.commit();
 		session.close();
 		
@@ -62,12 +59,10 @@ public class Database {
 		
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		
-		
+				
 		Query q = session.createQuery("SELECT al FROM Availabilities al");
 		availableList = q.getResultList();
-		
-		
+				
 		transaction.commit();
 		session.close();
 		

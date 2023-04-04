@@ -31,7 +31,7 @@ public class AppController {
 		db.closeDb();
 		
 		Services service = new Services();
-		List<Object[]> userAddressList = new ArrayList<>();
+		List<String> userAddressList = new ArrayList<>();
 		userAddressList = service.allData(personList, addressList, availableList);
 		
 		model.addAttribute("users", userAddressList);

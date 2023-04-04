@@ -10,28 +10,32 @@ import fj.sb_availabilities_mvc.model.Person;
 
 public class Services {
 
-	public List<Object[]> allData(List<Person> userList, List<Address> addressList,
+	public List<String> allData(List<Person> userList, List<Address> addressList,
 			List<Availabilities> availableList) {
-		List<Object[]> userAddressList = new ArrayList<>();
-		
+		List<String> userAddressList = new ArrayList<>();
+		String string  = "";
 		for (Person user : userList) {
-			System.out.println(user.getName() + ": ");
+			
+			string += user.getName() + ": ";
 			
 			for (Address address : addressList) {
-				if(user.getId() == address.getUserId()) {
-					
-					System.out.println(address.getAddress() + "; ");
+				if (user.getId() == address.getUserId()) {
+					string += address.getAddress() + "; ";					
 				}
 				for (Availabilities availabilities : availableList) {
-					
-					if((address.getId() == availabilities.getAddressId()) && (user.getId() == address.getUserId())) {
-						
-						System.out.println(availabilities.toString());
+					if ((address.getId() == availabilities.getAddressId()) && (user.getId() == address.getUserId())) {
+						string += availabilities.toString() + "; ";						
 					}
 				}
 			}
+			System.out.println(string);
+			userAddressList.add(string);
+			string ="";
 			System.out.println();
-		}
+		}		
+		
+		
+		
 		
 		
 		return userAddressList;

@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "userdb")
+@Table(name = "addresses")
 public class Address {
 	
 	@Id
@@ -22,12 +22,7 @@ public class Address {
 	@Column(name = "address")
 	private String address;
 	
-	public Address(int id, int userId, String address) {
-		super();
-		this.id = id;
-		this.userId = userId;
-		this.address = address;
-	}
+	
 
 	public int getId() {
 		return id;
